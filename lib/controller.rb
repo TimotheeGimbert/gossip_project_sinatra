@@ -19,11 +19,24 @@ class ApplicationController < Sinatra::Base
     gossip = Gossip.find(params['id'])
     redirect "/gossips/#{params['id']}/"
   end
+
   
   Gossip.all.each_with_index do |gossip, i|
+
     get "/gossips/#{i+1}/" do
       erb :show, locals: {id: i+1, gossip: gossip}
     end
+
+    get "/gossips/#{i+1}/edit/" do
+      erb :edit, locals: {id: i+1, gossip: gossip}
+    end
+
+    post "/gossips/#{i+1}/edit/" do
+      Gossip.edit(i+1, params['gossip_author'], params['gossip_content'])  
+      redirect "/gossips/#{i+1}/"
+    end
   end
+
+  
   
 end

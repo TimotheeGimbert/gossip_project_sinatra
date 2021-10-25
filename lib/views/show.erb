@@ -3,10 +3,11 @@
     <title>The Gossip Project</title>
   </head>
   <body>
-    <h1>PAGE POTIN</h1>
-    <p>Voici la page du potin n° <%=id%> </p>
+    <h1>PAGE POTIN</h1></br>
+    <p>Voici la page du potin n° <%=id%> </p></br>
     <p>Son auteur : <%= gossip.author %> </br> </p>
-    <p>Le contenu du potin : <%= gossip.content %> </br> </p>
+    <p>Le contenu du potin : <%= gossip.content %> </br> </p></br>
+    <a href="/gossips/<%=id%>/edit/">Editer ce potin</a></br></br></br>
     <a href="/">Retour à la page des potins</a>
   </body>
 </html>

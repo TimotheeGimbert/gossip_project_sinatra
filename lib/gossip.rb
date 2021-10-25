@@ -27,5 +27,17 @@ class Gossip
     return gossip
   end
 
+  def self.edit(id, author, content)
+    gossips = self.all
+    gossips[id-1].author = author
+    gossips[id-1].content = content
+    CSV.open("./db/gossips.csv", "w")
+    gossips.each do |gossip|
+      CSV.open("./db/gossips.csv", "ab") do |csv|
+        csv << [gossip.author, gossip.content]
+      end
+    end
+
+  end
   
 end

@@ -3,10 +3,11 @@
     <title>The Gossip Project</title>
   </head>
   <body>
-    <h1>Mon super site de gossip, depuis le dossier views avec shotgun ! !</h1>
-    <a href="/gossips/new/">Crée ton potin</a>
+    <h1>Le Bon Potin (boosté via shotgun !)</h1>
+    <a href="/gossips/new/">Créer une annonce de potin</a>
+    </br></br>
 
-    <h2>La liste des potins : </h2>
+    <h2>La liste des potins actuels : </h2>
     <% gossips.each_with_index do |gossip,i| %>
       <p>
         <%= gossip.author %><br/>
@@ -14,8 +15,9 @@
         <a href='/gossips/<%=i+1%>/'>Lien vers le potin</a>
       </p>
     <% end %>
+    </br>
 
-    <h2>Consulte un potin en particulier : </h2>
+    <h2>Consulter un potin en particulier : </h2>
     <form action='/' method='POST'>
       Saisi ici le numéro du potin :  <input type='text' name='id'/><br/>
       <input type='submit'/>
