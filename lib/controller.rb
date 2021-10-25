@@ -15,4 +15,9 @@ class ApplicationController < Sinatra::Base
     redirect '/'
   end
 
+  post '/' do
+    gossip = Gossip.find(params['id'])
+    erb :show, locals: {gossip: gossip, id:params['id']}
+  end
+
 end
