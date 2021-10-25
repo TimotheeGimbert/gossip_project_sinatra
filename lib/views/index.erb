@@ -7,10 +7,11 @@
     <a href="/gossips/new/">Crée ton potin</a>
 
     <h2>La liste des potins : </h2>
-    <% gossips.each do |gossip| %>
+    <% gossips.each_with_index do |gossip,i| %>
       <p>
         <%= gossip.author %><br/>
         <%= gossip.content %>
+        <a href='/gossips/<%=i+1%>/'>Lien vers le potin</a>
       </p>
     <% end %>
 
