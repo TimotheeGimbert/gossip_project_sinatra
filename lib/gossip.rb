@@ -13,4 +13,12 @@ class Gossip
     end
   end
 
+  def self.all
+    gossips = Array.new
+    CSV.read("./db/gossip.csv").each do |line|
+      gossips << Gossip.new(line[0], line[1])
+    end
+    return gossips
+  end
+
 end
