@@ -27,7 +27,7 @@ class Gossip
     return gossip
   end
 
-  def self.edit(id, author, content)
+  def self.update(id, author, content)
     gossips = self.all
     gossips[id-1].author = author
     gossips[id-1].content = content

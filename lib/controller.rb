@@ -32,7 +32,7 @@ class ApplicationController < Sinatra::Base
     end
 
     post "/gossips/#{i+1}/edit/" do
-      Gossip.edit(i+1, params['gossip_author'], params['gossip_content'])  
+      Gossip.update(i+1, params['gossip_author'], params['gossip_content'])  
       redirect "/gossips/#{i+1}/"
     end
   end
